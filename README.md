@@ -1,8 +1,6 @@
 # 🍜 Food Story ITS — Image to Speech
-
-* Lưu ý: Về Testing đã được gộp chung với source code để tiện cho chạy trên Google Colab
 Hệ thống nhận diện món ăn từ ảnh, tự động tạo nội dung tiếng Việt và đọc thành giọng nói.
-
+## Lưu ý: Về Testing đã được gộp chung với source code để tiện cho chạy trên Google Colab
 ---
 
 ## 👤 Thông tin sinh viên
