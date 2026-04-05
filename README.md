@@ -56,8 +56,8 @@ Model_Image_to_Speech/
 
 ## 🎬 Video Demo
 
-> 📹 **Link video demo:** [![Video Demo](https://img.youtube.com/vi/fcjItExAs68/maxresdefault.jpg)](https://youtu.be/fcjItExAs68)
-> 📹 **Link video demo:** `https://youtu.be/fcjItExAs68`
+> 📹 **Link video demo (6p):** `https://drive.google.com/drive/folders/1uhN9zN65hQXyfGDI2FNbmCv0yHuc9Yxj?usp=sharing`
+> 📹 **Link video demo chi tiết (17p):** `https://youtu.be/fcjItExAs68`
 
 ---
 
