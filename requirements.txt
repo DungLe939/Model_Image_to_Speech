@@ -1,14 +1,14 @@
-# Các thư viện cần để chạy chương trình
-
-!pip install fastapi nest-asyncio accelerate scipy torch pillow -q
-!pip install transformers==4.41.0 -q
-!pip install pyvips -q
-!apt-get install -y libvips -q
-!pip install uvicorn==0.29.0 -q
-
-# Model xử lý tts (edge-tts của rany2 từ github)
-!pip install edge-tts -q
-!pip install nest_asyncio -q
-
-# LLM groq
-!pip install groq -q
+fastapi
+python-multipart
+uvicorn==0.29.0
+nest-asyncio
+accelerate
+scipy
+torch
+pillow
+transformers==4.41.0
+edge-tts
+groq
+requests
+pyvips
+python-dotenv

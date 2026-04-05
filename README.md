@@ -47,11 +47,15 @@ Hệ thống hoạt động theo pipeline 4 bước:
 
 ## 📁 Cấu trúc dự án
 
-```
+```text
 Model_Image_to_Speech/
-├── [NOTEBOOK]_Food_Story_ITS.ipynb   # Notebook chính (API server + Testing)
-├── requirements.txt                  # Danh sách thư viện cần cài
-└── README.md                         # File hướng dẫn này
+├── Image/                            # Thư mục chứa các ảnh món ăn dùng để test
+├── .env.example                      # File mẫu khai báo cấu trúc API Key
+├── main.py                           # Mã nguồn chính chạy API Server (FastAPI)
+├── test_api.py                       # Script gọi test tự động, gửi ảnh và phát âm thanh
+├── [NOTEBOOK]_Food_Story_ITS.ipynb   # File Notebook chạy chính trên Google Colab
+├── requirements.txt                  # Danh sách thư viện Python cần cài đặt
+└── README.md                         # File tài liệu hướng dẫn này
 ```
 
 ## 🎬 Video Demo
@@ -87,7 +91,9 @@ Chạy các lệnh sau trong cell đầu tiên của notebook:
 
 ### Thiết lập API Keys
 
-Chương trình cần 2 API key được lưu trong **Colab Secrets** (🔑 icon bên trái):
+Chương trình cần 2 API key để hoạt động:
+- **Ngữ cảnh Google Colab:** Thêm key vào phần **Colab Secrets** (🔑 icon bên trái).
+- **Ngữ cảnh Local (Máy tính cá nhân):** Tạo file `.env` (bạn có thể copy từ `.env.example`) và dán key vào.
 
 | Key | Mô tả | Lấy ở đâu |
 |-----|--------|-----------|
@@ -98,7 +104,9 @@ Chương trình cần 2 API key được lưu trong **Colab Secrets** (🔑 icon
 
 ## 🚀 Hướng dẫn chạy chương trình
 
-### Bước 1: Mở notebook trên Google Colab
+### ☁️ Cách 1: Chạy trên Google Colab (Khuyến nghị)
+
+#### Bước 1: Mở notebook trên Google Colab
 
 Mở file **`[NOTEBOOK]_Food_Story_ITS.ipynb`** trên Google Colab.
 
@@ -123,6 +131,32 @@ Mở file **`[NOTEBOOK]_Food_Story_ITS.ipynb`** trên Google Colab.
 ### Bước 5: Test API
 
 Phần test API đã được tích hợp sẵn trong notebook chính — cell cuối cùng **"Call Local API (Testing)"** sẽ tự động test tất cả các endpoint sau khi server khởi động.
+
+---
+
+### 💻 Cách 2: Chạy trên Local (Máy cá nhân Windows/Mac)
+
+#### Bước 1: Cài đặt và thiết lập môi trường
+1. Cài đặt các thư viện từ file requirements (yêu cầu Python 3.10+):
+   ```bash
+   pip install -r requirements.txt
+   ```
+2. *(Chỉ dành cho Windows)* Cần gỡ `pyvips` do lỗi thiếu viện C++: Mở Terminal gõ `pip uninstall -y pyvips` và xóa thủ công tên thư viện khỏi `requirements.txt` (Moondream2 sẽ tự động chuyển sang dùng Pillow thay thế một cách tối ưu).
+3. Đổi tên file `.env.example` thành `.env` và điền 2 biến `HF_TOKEN` cùng `GROQ_API_KEY` vào trong file.
+
+#### Bước 2: Khởi động Server
+Mở Terminal (tại thư mục chứa code) và gõ lệnh sau để khởi động Server AI:
+```bash
+python main.py
+```
+> 🌐 **Tính năng Public (Pinggy):** Nếu bạn muốn công khai API ra ngoài Internet để test trên các thiết bị khác, hãy gõ thêm cờ `--share`: `python main.py --share`. Hệ thống sẽ tự cấp cho bạn một đường link public có dạng `https://xxx.pinggy.link`.
+
+#### Bước 3: Chạy phần mềm Test tự động
+Mở thêm một cửa sổ Terminal thứ 2 (để giữ Server vẫn chạy ở Terminal 1). Dùng script test tự động để AI phân tích ảnh `pho.jpg`, viết truyện ẩm thực và **tự động phát âm thanh** trên máy tính của bạn:
+```bash
+python test_api.py
+```
+*(Trường hợp bạn test bằng link Pinggy public, hãy truyền link qua tham số url: `python test_api.py --url https://xxx.pinggy.link`)*
 
 ---
 
