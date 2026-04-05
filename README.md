@@ -57,6 +57,7 @@ Model_Image_to_Speech/
 ## 🎬 Video Demo
 
 > 📹 **Link video demo (6p):** `https://drive.google.com/drive/folders/1uhN9zN65hQXyfGDI2FNbmCv0yHuc9Yxj?usp=sharing`
+
 > 📹 **Link video demo chi tiết (17p):** `https://youtu.be/fcjItExAs68`
 
 ---
