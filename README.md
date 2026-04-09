@@ -50,10 +50,14 @@ Hệ thống hoạt động theo pipeline 4 bước:
 ```text
 Model_Image_to_Speech/
 ├── Image/                            # Thư mục chứa các ảnh món ăn dùng để test
+├── .env                              # File cấu hình chứa API Keys thực tế (người dùng tự tạo từ .env.example)
 ├── .env.example                      # File mẫu khai báo cấu trúc API Key
+├── .gitignore                        # Chứa danh sách các file/thư mục ẩn không đưa lên Git
 ├── main.py                           # Mã nguồn chính chạy API Server (FastAPI)
 ├── test_api.py                       # Script gọi test tự động, gửi ảnh và phát âm thanh
 ├── [NOTEBOOK]_Food_Story_ITS.ipynb   # File Notebook chạy chính trên Google Colab
+├── pho.jpg                           # File ảnh món ăn mẫu dùng để test nhanh
+├── test_output.mp3                   # File âm thanh kết quả sinh ra sau khi chạy test_api.py
 ├── requirements.txt                  # Danh sách thư viện Python cần cài đặt
 └── README.md                         # File tài liệu hướng dẫn này
 ```
