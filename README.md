@@ -1,6 +1,5 @@
 # 🍜 Food Story ITS — Image to Speech
 Hệ thống nhận diện món ăn từ ảnh, tự động tạo nội dung tiếng Việt và đọc thành giọng nói.
-## Lưu ý: Về Testing đã được gộp chung với source code để tiện cho chạy trên Google Colab
 ---
 
 ## 👤 Thông tin sinh viên
@@ -49,7 +48,6 @@ Hệ thống hoạt động theo pipeline 4 bước:
 
 ```text
 Model_Image_to_Speech/
-├── Image/                            # Thư mục chứa các ảnh món ăn dùng để test
 ├── .env                              # File cấu hình chứa API Keys thực tế (người dùng tự tạo từ .env.example)
 ├── .env.example                      # File mẫu khai báo cấu trúc API Key
 ├── .gitignore                        # Chứa danh sách các file/thư mục ẩn không đưa lên Git
@@ -145,7 +143,7 @@ Phần test API đã được tích hợp sẵn trong notebook chính — cell c
    ```bash
    pip install -r requirements.txt
    ```
-2. *(Chỉ dành cho Windows)* Cần gỡ `pyvips` do lỗi thiếu viện C++: Mở Terminal gõ `pip uninstall -y pyvips` và xóa thủ công tên thư viện khỏi `requirements.txt` (Moondream2 sẽ tự động chuyển sang dùng Pillow thay thế một cách tối ưu).
+2. *(Chỉ dành cho Windows)* Cần gỡ `pyvips` do lỗi thiếu thư viện C++: Mở Terminal gõ `pip uninstall -y pyvips` và xóa thủ công tên thư viện khỏi `requirements.txt` (Moondream2 sẽ tự động chuyển sang dùng Pillow thay thế một cách tối ưu).
 3. Đổi tên file `.env.example` thành `.env` và điền 2 biến `HF_TOKEN` cùng `GROQ_API_KEY` vào trong file.
 
 #### Bước 2: Khởi động Server
